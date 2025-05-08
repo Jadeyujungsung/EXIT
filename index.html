@@ -2,69 +2,88 @@
 <html>
 <head>
     <title>첫 공연 속에 감춰진 비밀</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* 전체 요소 크기 150%로 설정 */
+        /* 모바일 친화적인 폰트 크기 설정 */
         body {
-            font-size: 150%;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
 
         .button-container {
             display: grid;
-            grid-template-columns: repeat(3, auto); /* 한 행에 3개 */
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
             justify-content: center;
-            padding: 20px;
+            padding: 10px;
         }
 
         .symbol-button {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px; /* 버튼 크기 증가 */
-            border: 3px solid #98a865; /* 버튼 선 크기 증가 */
+            padding: 10px;
+            border: 2px solid #98a865;
             border-radius: 8px;
-            background-color: #e8efd8; /* 버튼 배경 색 (아이보리색) */
+            background-color: #e8efd8;
             cursor: pointer;
-            font-size: 24px; /* 폰트 크기 증가 */
-            min-width: 180px; /* 버튼 최소 너비 증가 */
+            font-size: 1rem;
+            min-width: 100%;
+            max-width: 100%;
+            text-align: center;
         }
 
         .symbol-button img {
-            width: 36px; /* 이미지 크기 증가 */
-            height: 36px;
-            margin-right: 12px;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
         }
 
         .header-image {
             display: block;
             margin: 0 auto;
-            max-width: 600px; /* 이미지 크기 증가 */
+            max-width: 90%;
             height: auto;
-            padding: 10px;
         }
 
-        /* 링크의 밑줄 없애기 */
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
         a {
             text-decoration: none;
+            color: inherit;
+        }
+
+        /* 작은 화면에서 버튼 크기 최적화 */
+        @media (max-width: 480px) {
+            .symbol-button {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+            .symbol-button img {
+                width: 20px;
+                height: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- 헤더 이미지 추가 -->
     <img src="header.png" alt="Header Image" class="header-image">
-    
-    <h2 style="text-align: center;">첫 공연 속에 감춰진 비밀</h2>
+    <h2>첫 공연 속에 감춰진 비밀</h2>
     <div class="button-container">
-        <!-- 버튼 15개 생성 -->
         <script>
             for (let i = 1; i <= 15; i++) {
                 let buttonText;
-                // 각 행의 첫 번째, 두 번째, 세 번째 버튼에 다른 텍스트 설정
                 if ((i - 1) % 3 === 0) buttonText = "첫 번째 단서";
                 else if ((i - 1) % 3 === 1) buttonText = "두 번째 단서";
-                else buttonText = "해답"; // 세 번째 단서를 해답으로 변경
+                else buttonText = "해답";
 
-                document.write(` 
+                document.write(`
                     <a href="page${i}.html">
                         <button class="symbol-button">
                             <img src="symbol${i}.png" alt="Symbol ${i}">
