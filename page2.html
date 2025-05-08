@@ -2,45 +2,62 @@
 <html>
 <head>
     <title>두 번째 단서</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* 전체 폰트 크기 150%로 설정 */
         body {
-            text-align: center; /* 페이지 전체 텍스트 중앙 정렬 */
-            background-color: #f6ffe8; /* 배경색을 f6ffe8로 설정 */
-            font-size: 150%; /* 전체 폰트 크기 150%로 설정 */
+            text-align: center;
+            background-color: #f6ffe8;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
+
         .back-link {
             display: flex;
             align-items: center;
             text-decoration: none;
-            font-size: 24px;  /* 폰트 크기 150%로 조정 */
-            color: blue;      /* 파란색 폰트 색상 */
-            font-weight: bold; /* 폰트 굵기 bold */
-            justify-content: center; /* 링크도 중앙 정렬 */
+            font-size: 1.5rem;
+            color: blue;
+            font-weight: bold;
+            justify-content: center;
+            margin-top: 20px;
         }
+
         .back-link img {
-            width: 36px; /* 이미지 크기 150%로 조정 */
-            height: 36px;
-            margin-right: 12px;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
         }
+
         .content {
-            font-size: 24px; /* 본문 폰트 크기 150%로 조정 */
-            margin-top: 30px; /* 여백도 조금 더 크게 조정 */
+            font-size: 1.25rem;
+            margin: 20px;
         }
+
         .symbol-img {
-            width: 75px;  /* 이미지 크기 150%로 조정 */
-            height: 75px; /* 이미지 크기 150%로 조정 */
-            margin-right: 15px;
-            vertical-align: 3px; /* 이미지 3px 아래로 내리기 */
-            margin-top: 30px; /* 이미지 위 여백 150%로 키우기 */
+            width: 50px;
+            height: 50px;
+            margin: 20px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 480px) {
+            .back-link {
+                font-size: 1.2rem;
+            }
+            .symbol-img {
+                width: 40px;
+                height: 40px;
+            }
+            .content {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- 두 번째 단서 이미지 (symbol1.png) -->
     <img src="symbol1.png" alt="Symbol 1" class="symbol-img">
-    
-    <!-- 두 번째 단서 제목 -->
     <h2>두 번째 단서</h2>
 
     <div class="content">
@@ -52,7 +69,6 @@
         <p>알맞은 물품을 하나씩 찾아 전해주십시오.</p>
     </div>
 
-    <!-- 뒤로 가기 링크 -->
     <a href="index.html" class="back-link">
         <- 뒤로 가기
     </a>
